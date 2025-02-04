@@ -17,9 +17,7 @@ const inventors = [
 // Array.prototype.filter()
 // 1. Filter the array of inventors into a new array containing only the inventors born in the 1500's.
 
-const inventors1500 = inventors.filter(inventor => {
-  return inventor.year >= 1500 && inventor.year < 1600
-})
+
 
 console.log(inventors1500)
 
@@ -29,36 +27,28 @@ console.log(inventors1500)
 //    Hint: Each object in the output array should look something like { first: "First Name", last: "Last Name" }
 //          where "First Name" is the inventor's first name and "Last Name" is the inventor's last name.
 
-const inventorNames = inventors.map(inventor => {
-  return { first: inventor.first, last: inventor.last }
-})
+
 
 console.log(inventorNames)
 
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, from those born furthest in the past to those born most recently.
 
-inventors.sort((a, b) => {
-  return a.year - b.year
-})
+
 
 console.log(inventors)
 
 // Array.prototype.sort()
 // 4. Sort the inventors by years lived from shortest to longest-lived.
 
-inventors.sort((a, b) => {
-  return (a.passed - a.year) - (b.passed - b.year)
-})
+
 
 console.log(inventors)
 
 // Array.prototype.reduce()
 // 5. Find how many years all the inventors lived combined.
 
-const totalYears = inventors.reduce((total, inventor) => {
-  return total + (inventor.passed - inventor.year)
-}, 0)
+
 
 console.log(totalYears)
 
@@ -79,9 +69,7 @@ const people = [
 // Array.prototype.map()
 // 6. Map the people array such that the new array consists of strings with the names formatted as "First Last", e.g., "Becker, Carl" should be mapped to "Carl Becker".
 
-const firstLastPeople = people.map(person => {
-  return person.split(', ').reverse().join(' ')
-})
+
 
 console.log(firstLastPeople)
 
@@ -94,12 +82,7 @@ const data = [
 // 7. Count the number of instances for each of the data items.
 // Hint: Return an object where the keys are 'car', 'truck', etc., and the value is the total number of times each data item appears.
 
-const occuranceData = data.reduce((prev, num) => {
-  if (prev[num]) prev[num] += 1
-  else prev[num] = 1
 
-  return prev
-}, {})
 
 console.log(occuranceData)
 
@@ -113,18 +96,14 @@ const devs = [
 // Array.prototype.some()
 // 8. Check if at least one person is 19 or older.
 
-const devOlderThan19 = devs.some(dev => {
-  return (2024 - dev.year) > 19
-})
+
 
 console.log(devOlderThan19)
 
 // Array.prototype.every()
 // 9. Check if everyone is 19 or older.
 
-const everyDevOlderThan19 = devs.every(dev => {
-  return (2024 - dev.year) > 19
-})
+
 
 console.log(everyDevOlderThan19)
 
@@ -139,17 +118,13 @@ const comments = [
 // Array.prototype.find()
 // 10. Find the comment with the id of 823423.
 
-const findId = comments.find(comment => {
-  return comment.id === 823423
-})
+
 
 console.log(findId)
 
 // Array.prototype.findIndex()
 // 11. Find the index of the comment with an id of 123523.
 
-const findCommentIdx = comments.findIndex(comment => {
-  return comment.id === 123523
-})
+
 
 console.log(findCommentIdx)
