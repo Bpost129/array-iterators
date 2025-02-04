@@ -17,9 +17,11 @@ const inventors = [
 // Array.prototype.filter()
 // 1. Filter the array of inventors into a new array containing only the inventors born in the 1500's.
 
+const inventors1500 = inventors.filter(inv => {
+  return inv.year >= 1500 && inv.year < 1600
+})
 
-
-console.log(inventors1500)
+console.log('#1' + inventors1500)
 
 
 // Array.prototype.map()
@@ -27,30 +29,32 @@ console.log(inventors1500)
 //    Hint: Each object in the output array should look something like { first: "First Name", last: "Last Name" }
 //          where "First Name" is the inventor's first name and "Last Name" is the inventor's last name.
 
+const inventorNames = inventors.map(inv => {
+  return { first: inv.first, last: inv.last}
+})
 
-
-console.log(inventorNames)
+console.log('#2' + inventorNames)
 
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, from those born furthest in the past to those born most recently.
 
 
 
-console.log(inventors)
+console.log('#3' + inventors)
 
 // Array.prototype.sort()
 // 4. Sort the inventors by years lived from shortest to longest-lived.
 
 
 
-console.log(inventors)
+console.log('#4' + inventors)
 
 // Array.prototype.reduce()
 // 5. Find how many years all the inventors lived combined.
 
 
 
-console.log(totalYears)
+console.log('#5' + totalYears)
 
 const people = [
   'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry',
@@ -71,7 +75,7 @@ const people = [
 
 
 
-console.log(firstLastPeople)
+console.log('#6' + firstLastPeople)
 
 const data = [
   'car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van',
@@ -84,7 +88,7 @@ const data = [
 
 
 
-console.log(occuranceData)
+console.log('#7' + occuranceData)
 
 const devs = [
   { name: 'Wes', year: 1988 },
@@ -98,14 +102,14 @@ const devs = [
 
 
 
-console.log(devOlderThan19)
+console.log('#8' + devOlderThan19)
 
 // Array.prototype.every()
 // 9. Check if everyone is 19 or older.
 
 
 
-console.log(everyDevOlderThan19)
+console.log('#9' + everyDevOlderThan19)
 
 const comments = [
   { text: 'Love this!', id: 523423 },
@@ -120,11 +124,11 @@ const comments = [
 
 
 
-console.log(findId)
+console.log('#10' + findId)
 
 // Array.prototype.findIndex()
 // 11. Find the index of the comment with an id of 123523.
 
 
 
-console.log(findCommentIdx)
+console.log('#11' + findCommentIdx)
