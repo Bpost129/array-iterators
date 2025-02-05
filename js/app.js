@@ -79,7 +79,9 @@ const people = [
 // Array.prototype.map()
 // 6. Map the people array such that the new array consists of strings with the names formatted as "First Last", e.g., "Becker, Carl" should be mapped to "Carl Becker".
 
-
+const firstLastPeople = people.map(person => {
+  return person.split(', ').reverse().join(' ')
+})
 
 console.log(firstLastPeople)
 
@@ -92,7 +94,15 @@ const data = [
 // 7. Count the number of instances for each of the data items.
 // Hint: Return an object where the keys are 'car', 'truck', etc., and the value is the total number of times each data item appears.
 
+const occuranceData = data.reduce((prev, dat) => {
+  if (prev[dat]) {
+    prev[dat] += 1
+  } else {
+    prev[dat] = 1
+  }
 
+  return prev
+}, {})
 
 console.log(occuranceData)
 
