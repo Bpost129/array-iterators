@@ -116,14 +116,18 @@ const devs = [
 // Array.prototype.some()
 // 8. Check if at least one person is 19 or older.
 
-
+const devOlderThan19 = devs.some(dev => {
+  return 2024 - dev.year >= 19
+})
 
 console.log(devOlderThan19)
 
 // Array.prototype.every()
 // 9. Check if everyone is 19 or older.
 
-
+const everyDevOlderThan19 = devs.every(dev => {
+  return 2024 - dev.year >= 19
+})
 
 console.log(everyDevOlderThan19)
 
