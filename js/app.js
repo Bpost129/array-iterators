@@ -21,7 +21,7 @@ const inventors1500 = inventors.filter(inv => {
   return inv.year >= 1500 && inv.year < 1600
 })
 
-console.log('#1' + inventors1500)
+console.log(inventors1500)
 
 
 // Array.prototype.map()
@@ -33,28 +33,34 @@ const inventorNames = inventors.map(inv => {
   return { first: inv.first, last: inv.last}
 })
 
-console.log('#2' + inventorNames)
+console.log(inventorNames)
 
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, from those born furthest in the past to those born most recently.
 
+inventors.sort((a, b) => {
+  return a.year - b.year
+})
 
-
-console.log('#3' + inventors)
+console.log(inventors)
 
 // Array.prototype.sort()
 // 4. Sort the inventors by years lived from shortest to longest-lived.
 
+inventors.sort((a, b) => {
+  return (a.passed - a.year) - (b.passed - b.year)
+})
 
-
-console.log('#4' + inventors)
+console.log(inventors)
 
 // Array.prototype.reduce()
 // 5. Find how many years all the inventors lived combined.
 
+const totalYears = inventors.reduce((prev, inv) => {
+  return prev + (inv.passed - inv.year)
+}, 0)
 
-
-console.log('#5' + totalYears)
+console.log(totalYears)
 
 const people = [
   'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry',
@@ -75,7 +81,7 @@ const people = [
 
 
 
-console.log('#6' + firstLastPeople)
+console.log(firstLastPeople)
 
 const data = [
   'car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van',
@@ -88,7 +94,7 @@ const data = [
 
 
 
-console.log('#7' + occuranceData)
+console.log(occuranceData)
 
 const devs = [
   { name: 'Wes', year: 1988 },
@@ -102,14 +108,14 @@ const devs = [
 
 
 
-console.log('#8' + devOlderThan19)
+console.log(devOlderThan19)
 
 // Array.prototype.every()
 // 9. Check if everyone is 19 or older.
 
 
 
-console.log('#9' + everyDevOlderThan19)
+console.log(everyDevOlderThan19)
 
 const comments = [
   { text: 'Love this!', id: 523423 },
@@ -124,11 +130,11 @@ const comments = [
 
 
 
-console.log('#10' + findId)
+console.log(findId)
 
 // Array.prototype.findIndex()
 // 11. Find the index of the comment with an id of 123523.
 
 
 
-console.log('#11' + findCommentIdx)
+console.log(findCommentIdx)
